@@ -1,4 +1,5 @@
 import { useState } from "react";
+import classes from "./InputItems.module.css";
 
 function InputItems() {
 
@@ -18,13 +19,14 @@ function InputItems() {
   }
 
   return (
-    <>
+    <div className={classes.example}>
+      <h1>My favorite films:</h1>
       <form onSubmit={AddItem}>
-        <input name="item" type="text" value={item}
+        <input className={classes.input} name="item" type="text" value={item}
           onChange={(item) => setItem(item.target.value)}
         />
       </form>
-      <button onClick={AddItem}>Add</button>
+      <button className={classes.button} onClick={AddItem}>Add</button>
       <ul>
         {items.map((item) => (
           <li>
@@ -32,7 +34,7 @@ function InputItems() {
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 }
 
