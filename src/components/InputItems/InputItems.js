@@ -18,6 +18,11 @@ function InputItems() {
     setItem("");
   }
 
+  function DeleteItem() {
+  setItems(!item.name)
+  }
+
+
   return (
     <div className={classes.example}>
       <h1>My favorite films:</h1>
@@ -31,6 +36,7 @@ function InputItems() {
         {items.map((item) => (
           <li>
             {item.name}
+            <button onClick={DeleteItem}></button>
           </li>
         ))}
       </ul>
